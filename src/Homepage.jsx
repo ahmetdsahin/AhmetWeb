@@ -2,6 +2,7 @@ import React from "react";
 import heroimg from "./img/photo2.jpeg";
 import logo from "./img/logo.png";
 import pro1 from "./img/anasayfa.png";
+import pro2 from "./img/open_weather.png";
 import cer1 from "./img/cer1.png";
 import cer2 from "./img/cer2.png";
 import cer3 from "./img/cer3.png";
@@ -448,34 +449,22 @@ const Homepage = () => {
             viewport={{ once: false, amount: 0.4 }}
             className="max-w-sm  border border-green rounded-lg shadow "
           >
-            <img class="rounded-lg w-full h-full" src={pro1} alt="" />
+            <img class="rounded-lg w-full h-full" src={pro2} alt="" />
 
             <div class="p-5">
               <h5 class="mb-2 text-2xl font-bold tracking-tight ">
-                Restaurant Review
+              Weather App
               </h5>
 
               <p class="mb-3 font-normal ">
-                Restaurant Review is a website that allows users to search for
-                restaurants and read menus, addresses, etc. In addition,
-                registered users can leave reviews and go to the restaurant
-                location.
+              Developed using React Js and TailwindCss. A web-based weather application was developed by utilizing the OpenWeatherMap API.
               </p>
               <div className="flex flex-wrap gap-3 text-sm">
                 <p className="bg-green-dark text-green  p-2 rounded-xl">
                   React JS
                 </p>
                 <p className="bg-green-dark text-green p-2 rounded-xl">
-                  Node JS
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  Expres JS
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  MongoDB
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  TailwindCss
+                  Vite
                 </p>
               </div>
               <button
