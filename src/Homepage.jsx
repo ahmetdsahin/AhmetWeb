@@ -483,7 +483,7 @@ const Homepage = () => {
             viewport={{ once: false, amount: 0.4 }}
             className="max-w-sm  border border-green rounded-lg shadow "
           >
-            <img class="rounded-lg w-full h-full" src={pro1} alt="" />
+            <img class="rounded-lg w-full h-full" src={pro3} alt="" />
 
             <div class="p-5">
               <h5 class="mb-2 text-2xl font-bold tracking-tight ">
