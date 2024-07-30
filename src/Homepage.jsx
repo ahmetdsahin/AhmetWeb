@@ -26,6 +26,34 @@ import cv from "./img/AhmetSahinCV.pdf";
 import { FaAngleUp } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
 
+
+const projects = [
+  {
+    id: 1,
+    title: 'Restaurant Review',
+    description: 'Restaurant Review is a website that allows users to search for restaurants and read menus, addresses, etc. In addition, registered users can leave reviews and go to the restaurant location.',
+    image: pro1,
+    tags: ['React JS', 'Node JS', 'Express JS', 'MongoDB', 'TailwindCss'],
+    link: 'https://github.com/ahmetdsahin'
+  },
+  {
+    id: 2,
+    title: 'Weather App',
+    description: 'Developed using React Js and TailwindCss. A web-based weather application was developed by utilizing the OpenWeatherMap API.',
+    image: pro2,
+    tags: ['React JS', 'Vite'],
+    link: 'https://github.com/ahmetdsahin'
+  },
+  {
+    id: 3,
+    title: 'News App',
+    description: 'Developed using React Js and TailwindCss. A web based news page was developed using News API. The news is renewed daily thanks to the api. News from Anadolu Agency is brought as a source.',
+    image: pro3,
+    tags: ['React JS', 'TailwindCss'],
+    link: 'https://github.com/ahmetdsahin'
+  },
+];
+
 const Homepage = () => {
   /*  For Contact Form */
   const onSubmit = async (event) => {
@@ -62,8 +90,8 @@ const Homepage = () => {
       <header>
         <div className="max-w-screen-xl flex flex-col md:flex-row items-center justify-between mx-auto p-5">
           <a href="/" className="mb-4 md:mb-0">
-            <span className="text-xl font-bold">
-              Ahmet <br /> <span className="text-green">Şahin</span>
+            <span className="text-xl font-bold ">
+              Ahmet <br /> <span className="text-green">Şahin</span> 
             </span>
           </a>
           <div className="md:order-2 mb-4 md:mb-0">
@@ -104,20 +132,24 @@ const Homepage = () => {
         </div>
       </header>
 
-      <hero className="flex flex-row gap-8 max-w-screen-xl mx-auto py-8">
+      <hero className="flex flex-col md:flex-row gap-8 max-w-screen-xl mx-auto py-8">
         <motion.div
           variants={fadeIn("right", 0.5)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.4 }}
-          className="flex my-auto w-[300px] h-[350px] "
+          className="flex my-auto w-full md:w-[300px] h-auto md:h-[350px] "
         >
-          <img src={heroimg} alt="Ahmet Sahin" className="rounded-3xl" />
+          <img
+            src={heroimg}
+            alt="Ahmet Sahin"
+            className="rounded-3xl lg:w-full lg:h-full  w-[300px] h-[300px] mx-auto object-cover"
+          />
         </motion.div>
 
-        <div className="gap-y-8 ">
-          <div className="flex my-auto mt-16 box-decoration-slice  text-white px-2">
-            <h1 className="text-6xl font-extrabold ">
+        <div className="gap-y-8 flex flex-col">
+          <div className="flex my-auto mt-8 md:mt-16 box-decoration-slice text-white px-2">
+            <h1 className="text-4xl md:text-6xl font-extrabold">
               <span>I'm </span>
               <br />
               <TypeAnimation
@@ -134,17 +166,17 @@ const Homepage = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.4 }}
-            className="flex px-5 my-auto mt-16 font-medium text-lg"
+            className="flex px-5 my-auto mt-8 md:mt-16 font-medium text-lg"
           >
-            <p>
-              My goal is{" "}
+            <p className="text-pretty">
+              My goal is
               <span className="text-gray-light">to write maintainable, </span>
-              clean and <span className="text-gray-light">
-                understandable
-              </span>{" "}
-              code to process
-              <br />
-              <span className="text-gray-light">development is enjoyable.</span>
+              clean and <span className="text-gray-light">understandable </span>
+              code to process{" "}
+              <span className="text-gray-light">
+                {" "}
+                development is enjoyable.
+              </span>
             </p>
           </motion.div>
 
@@ -153,37 +185,40 @@ const Homepage = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.4 }}
-            className="flex flex-row"
+            className="flex flex-col md:flex-row"
           >
-            <button className="text-white flex items-center font-semibold py-3 px-8 border border-white hover:border-green rounded-full m-4">
+            <button className="text-white flex items-center font-semibold py-3 px-6 border border-white hover:border-green rounded-full m-6 md:m-4">
               <FaGithub className="mr-2" />
               <a href="https://github.com/ahmetdsahin" target="__blank">
                 {" "}
-                GitHub
+                GitHub{" "}
               </a>
             </button>
-            <button className="text-white flex items-center font-semibold py-3 px-8 border border-white hover:border-green rounded-full m-4">
+            <button className="text-white flex items-center font-semibold py-3 px-6 border border-white hover:border-green rounded-full m-6 md:m-4">
               <FaWhatsapp className="mr-2" />
               <a href="https://wa.me/905375589719" target="__blank">
-                Whatsapp
+                {" "}
+                Whatsapp{" "}
               </a>
             </button>
-            <button className="text-white flex items-center font-semibold py-3 px-8 border border-white hover:border-green rounded-full m-4">
+            <button className="text-white flex items-center font-semibold py-3 px-6 border border-white hover:border-green rounded-full m-6 md:m-4">
               <FaInstagram className="mr-2" />
               <a
                 href="https://www.instagram.com/aahmettsahiin/"
                 target="__blank"
               >
-                Instagram
+                {" "}
+                Instagram{" "}
               </a>
             </button>
-            <button className="text-white flex items-center font-semibold py-3 px-8 border border-white hover:border-green rounded-full m-4">
+            <button className="text-white flex items-center font-semibold py-3 px-6 border border-white hover:border-green rounded-full m-6 md:m-4">
               <FaLinkedin className="mr-2" />
               <a
                 href="https://www.linkedin.com/in/ahmetdursunsahin/"
                 target="__blank"
               >
-                LinkedIn
+                {" "}
+                LinkedIn{" "}
               </a>
             </button>
           </motion.div>
@@ -198,10 +233,10 @@ const Homepage = () => {
         whileInView={"show"}
         viewport={{ once: false, amount: 0.4 }}
       >
-        <h1 className="text-left ml-32 font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
+        <h1 className="text-left  ml-32 font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
           <span className="text-green">/</span>About Me
         </h1>
-        <p className="py-5 px-32 tracking-tight leading-relaxed text-justify text-md ">
+        <p className="py-5 px-6 lg:px-32 tracking-tight leading-relaxed text-justify text-md text-pretty ">
           <span className="text-gray-light">I am a graduate of</span> Yeditepe
           University Management Information Systems 2024.{" "}
           <span className="text-gray-light">I am a team player</span> who has
@@ -219,14 +254,13 @@ const Homepage = () => {
         </p>
       </motion.div>
 
-      {/*Portfolio*/}
       <div id="portfolio" className="pt-8">
-        <h1 className="text-center font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
+        <h1 className="text-center font-extrabold text-4xl tracking-wide underline underline-offset-4 decoration-green">
           My Portfolio
         </h1>
 
-        {/*Experience*/}
-        <h1 className="text-left ml-32 pt-8 font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
+        {/* Experience */}
+        <h1 className="lg:text-left ml-4 lg:ml-32 pt-8 font-extrabold text-4xl tracking-wide underline underline-offset-4 decoration-green">
           <span className="text-green">/</span>Experience
         </h1>
 
@@ -235,52 +269,56 @@ const Homepage = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.4 }}
-          className="ml-32 py-8"
+          className="md:ml-32 py-8"
         >
-          <ol class="relative  ">
-            <li class="mb-10 ms-6">
-              <span class="p-5 absolute flex items-center justify-center w-24 h-24 rounded-full -start-3 ring-8 ring-white ">
+          <ol className="relative ml-6">
+            <li className="mb-10 lg:ms-6 flex flex-col md:flex-row">
+              <span className="p-5 absolute md:relative flex items-center justify-center w-24 h-24 rounded-full md:-start-3 ring-8 ring-white">
                 <img
                   src="https://files.sikayetvar.com/lg/cmp/36/36453.png?1522650125"
-                  className="w-20 h-20"
+                  className="w-20 h-20 "
                   alt=""
                 />
               </span>
-              <h3 class="flex ml-24 items-center mb-1 text-xl font-bold  ">
-                Oruç Market Perakende (intern){" "}
-              </h3>
-              <p class=" ml-24 block mb-2 text-sm font-normal leading-none text-gray-light">
-                (June 2017 - August 2017){" "}
-              </p>
-              <p class=" ml-24 mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                I worked as an intern in IT. I gained analytical thinking,
-                process prioritization, time and crisis management and software
-                SQL skills.
-              </p>
+              <div className="lg:mt-0 mt-32 p-2 ">
+                <h3 className="flex items-center mb-1 text-xl font-bold">
+                  Oruç Market Perakende (intern){" "}
+                </h3>
+                <p className="block mb-2 text-sm font-normal leading-none text-gray-light">
+                  (June 2017 - August 2017){" "}
+                </p>
+                <p className="mb-4 text-base font-normal text-gray-500 ">
+                  I worked as an intern in IT. I gained analytical thinking,
+                  process prioritization, time and crisis management and
+                  software SQL skills.
+                </p>
+              </div>
             </li>
-            <li class="mb-10 ms-6 py-6">
-              <span class=" absolute flex items-center justify-center w-24 h-24 rounded-full -start-3 ring-8 ring-white">
+            <li className="mb-10 lg:ms-6 flex lg:flex-col flex-row">
+              <span className="absolute md:relative flex items-center justify-center w-24 h-24 rounded-full md:-start-3 ring-8 ring-white">
                 <img src={logo} className="w-22 h-24 rounded-full" alt="" />
               </span>
-              <h3 class="flex ml-24 items-center mb-1 text-xl font-bold  ">
-                79Ratio Agency (intern){" "}
-              </h3>
-              <p class=" ml-24 block mb-2 text-sm font-normal leading-none text-gray-light">
-                (June 2023 - September 2023){" "}
-              </p>
-              <p class=" ml-24 mb-4 tracking-tight leading-relaxed text-justify text-md pr-24 ">
-                Between June and August 2023, I interned at 79Ratio Agency, a
-                digital advertising agency that promotes the internet as an
-                alternative media. In the first week of the internship, I met
-                the web development team and learned the Wordpress system.
-                Working with experienced developers, we backed up and updated
-                the code of the websites. In the second month, I developed a
-                deeper understanding of Wordpress and SEO by creating new
-                websites. Afterwards, we designed and developed a web
-                application. This internship experience was a valuable
-                experience for me as it gave me the opportunity to work with a
-                great team and get to know the industry closely.
-              </p>
+              <div className="lg:mt-0 mt-32 pt-3 ">
+                <h3 className="flex items-center mb-1 text-xl font-bold">
+                  79Ratio Agency (intern)
+                </h3>
+                <p className="block mb-2 text-sm font-normal leading-none text-gray-light">
+                  (June 2023 - September 2023)
+                </p>
+                <p className="mb-4 pr-6 text-base font-normal text-gray-500">
+                  Between June and August 2023, I interned at 79Ratio Agency, a
+                  digital advertising agency that promotes the internet as an
+                  alternative media. In the first week of the internship, I met
+                  the web development team and learned the Wordpress system.
+                  Working with experienced developers, we backed up and updated
+                  the code of the websites. In the second month, I developed a
+                  deeper understanding of Wordpress and SEO by creating new
+                  websites. Afterwards, we designed and developed a web
+                  application. This internship experience was a valuable
+                  experience for me as it gave me the opportunity to work with a
+                  great team and get to know the industry closely.
+                </p>
+              </div>
             </li>
           </ol>
         </motion.div>
@@ -288,7 +326,7 @@ const Homepage = () => {
 
       {/* Cards*/}
       <div>
-        <h1 className="text-left ml-32 pt-8 font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
+        <h1 className="text-left lg:ml-32 ml-6 pt-8 font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
           <span className="text-green">/</span>Certificates
         </h1>
         <div
@@ -298,7 +336,7 @@ const Homepage = () => {
           viewport={{ once: false, amount: 0.4 }}
           className=" w-3/4  mx-auto py-6 space-x-5  "
         >
-          <SlideshowLightbox className="container grid grid-cols-3 gap-12 mx-auto">
+          <SlideshowLightbox className="hidden lg:container lg:grid lg:grid-cols-3 lg:gap-12 mx-auto ">
             <img src={cer1} className="w-full rounded" alt="" />
             <img src={cer2} className="w-full rounded" alt="" />
             <img src={cer3} className="w-full rounded" alt="" />
@@ -311,8 +349,21 @@ const Homepage = () => {
             <img src={cer10} className="w-full rounded" alt="" />
           </SlideshowLightbox>
         </div>
+        {/*Sadece Mobil cihazda görünür*/}
+        <div className=" md:hidden grid grid-cols-1 gap-4 justify-between items-center mx-auto p-4">
+          <img src={cer1} className="w-full rounded" alt="" />
+          <img src={cer2} className="w-full rounded" alt="" />
+          <img src={cer3} className="w-full rounded" alt="" />
+          <img src={cer4} className="w-full rounded" alt="" />
+          <img src={cer5} className="w-full rounded" alt="" />
+          <img src={cer6} className="w-full rounded" alt="" />
+          <img src={cer7} className="w-full rounded" alt="" />
+          <img src={cer8} className="w-full rounded" alt="" />
+          <img src={cer9} className="w-full rounded" alt="" />
+          <img src={cer10} className="w-full rounded" alt="" />
+        </div>
 
-        <h1 className="text-left ml-32 pt-8 font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
+        <h1 className="lg:text-left ml-4 lg:ml-32 pt-8 font-extrabold text-4xl tracking-wide underline underline-offset-4 decoration-green">
           <span className="text-green">/</span>My Skills
         </h1>
         <Marquee className="bg-black p-5 mt-16 mb-16 shadow-[0_5px_60px_rgba(60,_190,_113,_0.7)]">
@@ -394,128 +445,43 @@ const Homepage = () => {
 
       {/* Projects*/}
       <div id="project" className="mt-4">
-        <h1 className="text-left ml-32  font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
-          <span className="text-green">/</span>My Projects
-        </h1>
-        <div className=" ml-32 mr-32 py-8 flex flex-row gap-4 mx-auto items-center justify-between ">
+      <h1 className="text-center lg:text-left ml-4 lg:ml-32 pt-8 font-extrabold text-4xl tracking-wide underline underline-offset-4 decoration-green">
+        <span className="text-green">/</span>My Projects
+      </h1>
+      <div className="flex flex-col lg:flex-row lg:ml-32 lg:mr-32 lg:py-8 lg:gap-4 items-center justify-center">
+        {projects.map((project, index) => (
           <motion.div
-            variants={fadeIn("right", 0.5)}
+            key={project.id}
+            variants={fadeIn(index % 2 === 0 ? "up" : index % 3 === 0 ? "up" : "up", 0.5)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.4 }}
-            className="max-w-sm  border border-green rounded-lg shadow "
+            className="w-full sm:w-80 md:w-96 lg:w-80 h-auto mb-8 lg:mb-0 border border-green rounded-lg shadow-lg flex flex-col"
           >
-            <img class="rounded-lg w-full h-full" src={pro1} alt="" />
-
-            <div class="p-5">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight ">
-                Restaurant Review
-              </h5>
-
-              <p class="mb-3 font-normal ">
-                Restaurant Review is a website that allows users to search for
-                restaurants and read menus, addresses, etc. In addition,
-                registered users can leave reviews and go to the restaurant
-                location.
-              </p>
+            <img className="w-full h-48 object-cover rounded-t-lg" src={project.image} alt={project.title} />
+            <div className="p-5 flex-grow">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight">{project.title}</h5>
+              <p className="mb-3 font-normal">{project.description}</p>
               <div className="flex flex-wrap gap-3 text-sm">
-                <p className="bg-green-dark text-green  p-2 rounded-xl">
-                  React JS
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  Node JS
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  Express JS
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  MongoDB
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  TailwindCss
-                </p>
+                {project.tags.map(tag => (
+                  <p key={tag} className="bg-green-dark text-green p-2 rounded-xl">{tag}</p>
+                ))}
               </div>
               <button
                 type="button"
-                className=" mt-3 focus:outline-none text-black bg-green hover:bg-green-dark hover:text-green font-bold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "
+                className="mt-3 focus:outline-none text-black bg-green hover:bg-green-dark hover:text-green font-bold rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
               >
-              <a href="https://github.com/ahmetdsahin" target="__blank">Daha Fazla{" "}</a>  
+                <a href={project.link} target="__blank" rel="noopener noreferrer">Daha Fazla</a>
               </button>
             </div>
           </motion.div>
-          <motion.div
-            variants={fadeIn("up", 0.5)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
-            className="max-w-sm  border border-green rounded-lg shadow "
-          >
-            <img class="rounded-lg w-full h-full" src={pro2} alt="" />
-
-            <div class="p-5">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight ">
-                Weather App
-              </h5>
-
-              <p class="mb-3 font-normal ">
-               Developed using React Js and TailwindCss. A web-based weather application was developed by utilizing the OpenWeatherMap API.
-              </p>
-              <div className="flex flex-wrap gap-3 text-sm">
-                <p className="bg-green-dark text-green  p-2 rounded-xl">
-                  React JS
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  Vite
-                </p>
-              </div>
-              <button
-                type="button"
-                className=" mt-3 focus:outline-none text-black bg-green hover:bg-green-dark hover:text-green font-bold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "
-              >
-              <a href="https://github.com/ahmetdsahin" target="__blank">Daha Fazla{" "}</a>  
-              </button>
-            </div>
-          </motion.div>
-          <motion.div
-            variants={fadeIn("left", 0.5)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
-            className="max-w-sm  border border-green rounded-lg shadow "
-          >
-            <img class="rounded-lg w-full h-full" src={pro3} alt="" />
-
-            <div class="p-5">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight ">
-               News App
-              </h5>
-
-              <p class="mb-3 font-normal ">
-                Developed using React Js and TailwindCss. A web-based 
-                news page was developed using News API.
-              </p>
-              <div className="flex flex-wrap gap-3 text-sm">
-                <p className="bg-green-dark text-green  p-2 rounded-xl">
-                  React JS
-                </p>
-                <p className="bg-green-dark text-green p-2 rounded-xl">
-                  Tailwindcss
-                </p>
-              </div>
-              <button
-                type="button"
-                className=" mt-3 focus:outline-none text-black bg-green hover:bg-green-dark hover:text-green font-bold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "
-              >
-            <a href="https://github.com/ahmetdsahin" target="__blank">Daha Fazla{" "}</a>  
-              </button>
-            </div>
-          </motion.div>
-        </div>
+        ))}
       </div>
+    </div>
 
       {/*Contacts */}
       <div id="contact">
-        <h1 className="text-left ml-32  font-extrabold text-4xl tracking-wide   underline underline-offset-4  decoration-green">
+        <h1 className="text-center lg:text-left ml-4 lg:ml-32 pt-8 font-extrabold text-4xl tracking-wide underline underline-offset-4 decoration-green">
           <span className="text-green">/</span>Contact Me
         </h1>
 
